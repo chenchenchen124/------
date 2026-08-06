@@ -27,7 +27,7 @@ int main(void)
 	DHT11_Init2();
 	OLED_ShowString(1, 1,"TIME:");
 	OLED_ShowString(3, 1,"temp:");
-	OLED_ShowString(3, 10,"humi:");
+	OLED_ShowString(3, 10,"humiw:");
 	OLED_ShowString(4, 1,"water:         %");
 	while(1)
 	{	
@@ -51,9 +51,9 @@ void task(void)
 
 }
 
-void TIM2_IRQHandler(void)   //TIM3ÖÐ¶Ï 
+void TIM2_IRQHandler(void)   //TIM3ï¿½Ð¶ï¿½ 
 {
-	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) //¼ì²éÖ¸¶¨µÄTIM3ÖÐ¶Ï·¢ÉúÓë·ñ:TIM3 ÖÐ¶ÏÔ´ 
+	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) //ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½TIM3ï¿½Ð¶Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:TIM3 ï¿½Ð¶ï¿½Ô´ 
 	{
 		number++;
 		if(AD_GetValue(ADC_Channel_1)<=200)
@@ -68,7 +68,7 @@ void TIM2_IRQHandler(void)   //TIM3ÖÐ¶Ï
 //		water=AD_GetValue(ADC_Channel_1);
 		DHT11_Read_Data2(&temp,&humi);
 	}
-	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);  //Çå³ýTIM3µÄÖÐ¶Ï´ý´¦ÀíÎ»:TIM3 ÖÐ¶ÏÔ´ 
+	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);  //ï¿½ï¿½ï¿½TIM3ï¿½ï¿½ï¿½Ð¶Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Î»:TIM3 ï¿½Ð¶ï¿½Ô´ 
 }
 
 
