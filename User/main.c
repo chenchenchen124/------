@@ -27,7 +27,7 @@ int main(void)
 	DHT11_Init2();
 	OLED_ShowString(1, 1,"TIME:");
 	OLED_ShowString(3, 1,"temp:");
-	OLED_ShowString(3, 10,"humiw:");
+	OLED_ShowString(3, 10,"humi:");
 	OLED_ShowString(4, 1,"water:         %");
 	while(1)
 	{	
