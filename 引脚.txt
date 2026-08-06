@@ -1,0 +1,11 @@
+MQ2 PA0
+水位 PA1
+红外PA2
+风扇PA3
+光照 PA4 5
+OLED PA6 7 
+LED PA11 12
+继电器 PA8
+DHT11 PB5
+步进电机 PB6 7 8 9
+蓝牙 PA9 10
